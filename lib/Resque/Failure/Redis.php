@@ -9,7 +9,7 @@
 
 class Resque_Failure_Redis implements Resque_Failure_Interface
 {
-	const TIMEOUT = 60 * 60 * 24 * 14; // Two Weeks
+	const TIMEOUT = 1209600; // 60 * 60 * 24 * 14 = Two Weeks
 
 	/**
 	 * Initialize a failed job class and save it (where appropriate).
