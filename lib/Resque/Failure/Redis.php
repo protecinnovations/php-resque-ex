@@ -9,6 +9,8 @@
 
 class Resque_Failure_Redis implements Resque_Failure_Interface
 {
+	const TIMEOUT = 60 * 60 * 24 * 14; // Two Weeks
+
 	/**
 	 * Initialize a failed job class and save it (where appropriate).
 	 *
@@ -27,7 +29,7 @@ class Resque_Failure_Redis implements Resque_Failure_Interface
 		$data['backtrace'] = explode("\n", $exception->getTraceAsString());
 		$data['worker'] = (string)$worker;
 		$data['queue'] = $queue;
-		Resque::Redis()->setex('failed:'.$payload['id'], 3600*14, serialize($data));
+		Resque::Redis()->setex('failed:'.$payload['id'], self::TIMEOUT, serialize($data));
 	}
 
 	static public function get($jobId)
