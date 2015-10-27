@@ -1,5 +1,5 @@
 Php-Resque-ex: Resque for PHP
-[![Build Status](https://travis-ci.org/protecinnovations/php-resque-ex.svg?branch=integration)](https://travis-ci.org/protecinnovations/php-resque-ex)
+[![Build Status](https://travis-ci.org/protecinnovations/php-resque-ex.svg)](https://travis-ci.org/protecinnovations/php-resque-ex)
 ===========================================
 
 Resque is a Redis-backed library for creating background jobs, placing
