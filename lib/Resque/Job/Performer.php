@@ -91,7 +91,7 @@ class Resque_Job_Performer
      */
     protected function performHook($hook)
     {
-        call_user_func_array([$this->job, $hook], $this->args);
+        call_user_func_array([$this->job, $hook], [$this->args]);
     }
 
     /**
